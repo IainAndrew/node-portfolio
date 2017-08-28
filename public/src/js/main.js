@@ -40,13 +40,13 @@ $(document).ready(function() {
   $(window).on('scroll', function() {
     $headerElements.each((index, item) => {
       const $item = $(item)
-      const yPos = ($(window).scrollTop() / $item.data('speed'));
+      const yPos = ($(window).scrollTop() * $item.data('speed'));
       $item.css({
         '-webkit-transform': 'translateY(' + yPos + 'px)',
         'transform': 'translateY(' + yPos + 'px)'
       });
     })
     var scrolledY = $(window).scrollTop();
-    $('.page-header .image').css('background-position', 'left ' + (scrolledY / 2) + 'px');
+    $('.page-header .image').css('top', (scrolledY / 2) + 'px');
   });
 })

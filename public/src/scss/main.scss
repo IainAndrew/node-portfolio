@@ -12,7 +12,8 @@
 'utils/variables',
 'utils/mixins',
 'utils/animations',
-'components/page-header';
+'components/page-header',
+'components/browser-window';
 
 .transition-overlay {
   position:fixed;
@@ -61,7 +62,7 @@ body {
   transition:transform 0.3s ease;
 }
 section.page-section {
-  padding:2rem 0;
+  padding:4rem 0;
   background-color:white;
   // min-height:120vh;
   @each $name, $value in $background-colors {

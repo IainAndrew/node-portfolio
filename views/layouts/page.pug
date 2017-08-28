@@ -3,12 +3,13 @@ extends ../layout
 block content
   header.page-header
     .page-header-inner
-      .image(style="background-image:url(" + page.headerImage.fields.file.url + ")")
-        //- img.lazyload(src=page.headerImage.fields.file.url data-src=page.headerImage.fields.file.url alt="")
-      .content.row
-        h1(data-speed="4")!= page.heading ? page.heading : page.title
-        if page.subheading
-          h2(data-speed="6")!= page.subheading
+      if page.headerImage
+        .image
+          img.lazyload(src=page.headerImage.fields.file.url data-src=page.headerImage.fields.file.url alt="")
+      //- .content.row
+      //-   h1(data-speed=".3")!= page.heading ? page.heading : page.title
+      //-   if page.subheading
+      //-     h2(data-speed=".2")!= page.subheading
   main.content
     if page.sections
       each section in page.sections
@@ -22,17 +23,17 @@ block content
                 if section.fields.showTitle
                   h3.section-heading!= section.fields.title
                 | !{section.fields.content}
-              if type == 'projectList'
-                h3!= section.fields.title
-                //- ul.projects
-                //-   each project in section.fields.projects
-                //-     li
-                //-       a(href=project.fields.slug)!= project.fields.title
-    section.page-section
-      .row
-        .column
-          a.button(href="/footer-reveal-js" data-direction="forward" data-color="pink") footer-reveal
-          br
-          a.button(href="/holiday-search" data-direction="forward") holiday search
-          br
-          a.button(href="/" data-direction="back") home
+              //- if type == 'projectList'
+              //-   h3!= section.fields.title
+              //-   ul.projects
+              //-     each project in section.fields.projects
+              //-       li
+              //-         a(href=project.fields.slug data-direction="forward" data-color=project.fields.overlayColor)!= project.fields.title
+    //- section.page-section
+    //-   .row
+    //-     .column
+    //-       a.button(href="/footer-reveal-js" data-direction="forward" data-color="pink") footer-reveal
+    //-       br
+    //-       a.button(href="/holiday-search" data-direction="forward") holiday search
+    //-       br
+    //-       a.button(href="/" data-direction="back") home

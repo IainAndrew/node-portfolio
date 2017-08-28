@@ -1,0 +1,71 @@
+$browser-border-radius:0.5em;
+
+.browser-windows-stacked {
+  position:relative;
+  padding-top:5rem;
+  font-size:0.5em;
+  @include clearfix;
+  &.right {
+    .browser-window {
+      &.skew-back {
+        transform: perspective(700px) rotateY(20deg) rotateX(5deg);
+        right:0;
+      }
+      &.skew-front {
+        transform: perspective(700px) rotateY(-20deg) rotateX(5deg);
+      }
+    }
+  }
+  &.left {
+    .browser-window {
+      &.skew-back {
+        transform: perspective(700px) rotateY(-20deg) rotateX(5deg);
+        left:0;
+      }
+      &.skew-front {
+        transform: perspective(700px) rotateY(20deg) rotateX(5deg);
+        float:right;
+      }
+    }
+  }
+  .browser-window {
+    max-width:100%;
+    &.skew-back, &.skew-front {
+      box-shadow:2em 2em 10em -4em rgba(#000,0.6);
+    }
+    &.skew-back {
+      width:21rem;
+      position:absolute;
+      top:0;
+    }
+    &.skew-front {
+      width:27rem;
+    }
+  }
+}
+
+.browser-window {
+  border-radius:$browser-border-radius;
+  overflow:hidden;
+  .browser-window-top {
+    position:relative;
+    width:100%;
+    height:2em;
+    background:$light-gray;
+    &:before {
+      content:"";
+      position:absolute;
+      top:50%;
+      left:0.5em;
+      transform:translateY(-50%);
+      height:0.5em;
+      width:0.5em;
+      border-radius:50%;
+      background:indianred;
+      box-shadow:1em 0 yellow, 2em 0 green;
+    }
+  }
+  img {
+    display:block;
+  }
+}
