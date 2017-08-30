@@ -13,7 +13,8 @@
 'utils/mixins',
 'utils/animations',
 'components/page-header',
-'components/browser-window';
+'components/browser-window',
+'components/footer';
 
 .transition-overlay {
   position:fixed;
@@ -21,7 +22,7 @@
   left:0;
   width:100%;
   height:100%;
-  background:white;
+  background-color:white;
   z-index:10;
   transform:translateY(0);
   transition:transform 0.5s ease, opacity 0.3s ease;
@@ -41,7 +42,7 @@
 }
 
 body {
-  background:lightgrey;
+  background-color:lightgrey;
   &.transition-out {
     .container {
       transform:scale(0.9);
@@ -64,10 +65,29 @@ body {
 section.page-section {
   padding:4rem 0;
   background-color:white;
+  position:relative;
   // min-height:120vh;
   @each $name, $value in $background-colors {
     &.#{$name} {
-      background-color:$value;
+      // background-color:$value;
+      .bg {
+        background-color:$value;
+      }
+    }
+  }
+  &.skewed-bg {
+    .bg {
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      transform:skewY(-10deg);
+      transform-origin:0;
+    }
+    .row {
+      position:relative;
+      z-index:1;
     }
   }
 }

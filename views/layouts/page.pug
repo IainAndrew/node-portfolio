@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-  header.page-header
+  header.page-header(class=page.headerClass ? page.headerClass : undefined)
     .page-header-inner
       if page.headerImage
         .image
@@ -15,6 +15,8 @@ block content
       each section in page.sections
         - var type = section.sys.contentType.sys.id
         section.page-section(class=section.fields.classes ? section.fields.classes : undefined class=section.fields.backgroundImage ? 'has-background-image' : undefined)
+          if section.fields.classes && section.fields.classes.indexOf('skewed-bg') !== -1
+            .bg
           if section.fields.backgroundImage
             img.background-image(src=section.fields.backgroundImage.fields.file.url, alt="")
           div(class=section.fields.classes && section.fields.classes.indexOf('full-width') !== -1 ? 'clearfix' : 'row')
