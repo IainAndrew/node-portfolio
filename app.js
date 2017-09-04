@@ -24,6 +24,10 @@ if (app.get('env') === 'development') {
   app.set('public', path.join(__dirname, 'public/dist'));
   app.use(express.static(path.join(__dirname, 'public/dist')));
 }
+if (app.get('env') === 'production') {
+  app.set('public', path.join(__dirname, 'public/dist'));
+  app.use(express.static(path.join(__dirname, 'public/dist')));
+}
 app.use('/', index);
 
 // catch 404 and forward to error handler
