@@ -15,6 +15,16 @@ $browser-border-radius:0.5em;
         transform: perspective(700px) rotateY(-20deg) rotateX(5deg);
       }
     }
+    &:hover {
+      .browser-window {
+        &.skew-back {
+          transform: perspective(700px) rotateY(10deg) rotateX(8deg) translateX(1rem) translateY(-1rem);
+        }
+        &.skew-front {
+          transform: perspective(700px) rotateY(-10deg) rotateX(4deg) translateX(-1rem) translateY(-1rem);
+        }
+      }
+    }
   }
   &.left {
     .browser-window {
@@ -27,9 +37,20 @@ $browser-border-radius:0.5em;
         float:right;
       }
     }
+    &:hover {
+      .browser-window {
+        &.skew-back {
+          transform: perspective(700px) rotateY(-10deg) rotateX(4deg) translateX(-1rem) translateY(-1rem);
+        }
+        &.skew-front {
+          transform: perspective(700px) rotateY(10deg) rotateX(8deg) translateX(1rem) translateY(-1rem);
+        }
+      }
+    }
   }
   .browser-window {
     max-width:100%;
+    transition:transform 0.3s ease;
     &.skew-back, &.skew-front {
       box-shadow:2em 2em 10em -4em rgba(#000,0.6);
     }

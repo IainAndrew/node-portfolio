@@ -42,7 +42,7 @@
 }
 
 body {
-  background-color:lightgrey;
+  background-color:$blue;
   &.transition-out {
     .container {
       transform:scale(0.9);
