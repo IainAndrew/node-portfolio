@@ -26,7 +26,6 @@
   z-index:10;
   transform:translateY(0);
   transition:transform 0.5s ease, opacity 0.3s ease;
-  // box-shadow:0 20px 20px rgba(#000, 0.3);
   &.fade {
     opacity:0;
     pointer-events:none;
@@ -66,12 +65,17 @@ section.page-section {
   padding:4rem 0;
   background-color:white;
   position:relative;
-  // min-height:120vh;
   @each $name, $value in $background-colors {
-    &.#{$name} {
-      // background-color:$value;
-      .bg {
+    &:not(.skewed-bg) {
+      &.#{$name} {
         background-color:$value;
+      }
+    }
+    &.skewed-bg {
+      &.#{$name} {
+        .bg {
+          background-color:$value;
+        }
       }
     }
   }

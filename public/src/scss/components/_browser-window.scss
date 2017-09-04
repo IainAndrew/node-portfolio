@@ -18,10 +18,10 @@ $browser-border-radius:0.5em;
     &:hover {
       .browser-window {
         &.skew-back {
-          transform: perspective(700px) rotateY(10deg) rotateX(8deg) translateX(1rem) translateY(-1rem);
+          transform: perspective(700px) rotateY(10deg) rotateX(8deg) translateX(1em) translateY(-1em);
         }
         &.skew-front {
-          transform: perspective(700px) rotateY(-10deg) rotateX(4deg) translateX(-1rem) translateY(-1rem);
+          transform: perspective(700px) rotateY(-10deg) rotateX(4deg) translateX(-1em) translateY(-1em);
         }
       }
     }
@@ -40,10 +40,10 @@ $browser-border-radius:0.5em;
     &:hover {
       .browser-window {
         &.skew-back {
-          transform: perspective(700px) rotateY(-10deg) rotateX(4deg) translateX(-1rem) translateY(-1rem);
+          transform: perspective(700px) rotateY(-10deg) rotateX(4deg) translateX(-1em) translateY(-1em);
         }
         &.skew-front {
-          transform: perspective(700px) rotateY(10deg) rotateX(8deg) translateX(1rem) translateY(-1rem);
+          transform: perspective(700px) rotateY(10deg) rotateX(8deg) translateX(1em) translateY(-1em);
         }
       }
     }
