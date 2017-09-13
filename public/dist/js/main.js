@@ -7034,7 +7034,7 @@ $(document).ready(function () {
   $('a').on('click', function (e) {
     e.preventDefault();
     var color = $(this).data('color');
-    var direction = $(this).data('direction');
+    var direction = $(this).data('direction') || 'forward';
     var href = $(this).attr('href');
     $body.addClass('transition-out ' + direction || '');
     $('.transition-overlay').attr('data-color', color || '');
@@ -7055,7 +7055,7 @@ $(document).ready(function () {
     });
     var scrolledY = $(window).scrollTop();
     $('.page-header .image').css('top', scrolledY / 2 + 'px');
-    if (scrolledY >= 200) {
+    if (scrolledY >= 100) {
       $body.addClass('scrolled');
     } else {
       $body.removeClass('scrolled');

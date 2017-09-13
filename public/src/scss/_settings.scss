@@ -46,7 +46,7 @@
 // 1. Global
 // ---------
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,900|Open+Sans:400,700,800,800i');
 
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
@@ -64,12 +64,13 @@ $dark-gray: #8a8a8a;
 $white: #ffffff;
 $body-background: $white;
 $body-font-color: #6b7c93;
-$body-font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: 'Merriweather', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
+$global-weight-black: 800;
 $global-radius: 0;
 $global-text-direction: ltr;
 $global-flexbox: false;
@@ -105,8 +106,8 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$header-font-weight: $global-weight-black;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;

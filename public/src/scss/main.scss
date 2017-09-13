@@ -12,9 +12,15 @@
 'utils/variables',
 'utils/mixins',
 'utils/animations',
+'components/navigation',
 'components/page-header',
 'components/browser-window',
 'components/footer';
+
+.button {
+  font-family:$header-font-family;
+  text-transform:uppercase;
+}
 
 .transition-overlay {
   position:fixed;
@@ -62,10 +68,29 @@ body {
   transition:transform 0.3s ease;
 }
 section.page-section {
-  padding:4rem 0;
+  padding:$section-padding 0;
   background-color:white;
   position:relative;
+  .section-heading {
+    text-align:center;
+    text-transform:uppercase;
+    position:relative;
+    margin-bottom:$section-padding;
+    // &:after {
+    //   content:"";
+    //   position:absolute;
+    //   top:100%;
+    //   left:50%;
+    //   transform:translateX(-50%);
+    //   width:10rem;
+    //   height:4px;
+    //   background:currentColor;
+    // }
+  }
   @each $name, $value in $background-colors {
+    &.#{$name} {
+      color:$white;
+    }
     &:not(.skewed-bg) {
       &.#{$name} {
         background-color:$value;
