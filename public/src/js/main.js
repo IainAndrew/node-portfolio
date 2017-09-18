@@ -24,7 +24,7 @@ $(document).ready(function() {
     })
   }, 500)
 
-  $('a').on('click', function(e) {
+  $('a[data-direction]').on('click', function(e) {
     e.preventDefault()
     const color = $(this).data('color')
     const direction = $(this).data('direction') || 'forward'
@@ -48,7 +48,7 @@ $(document).ready(function() {
     })
     const scrolledY = $(window).scrollTop()
     $('.page-header .image').css('top', (scrolledY / 2) + 'px')
-    if (scrolledY >= 100) {
+    if (scrolledY >= 150) {
       $body.addClass('scrolled')
     } else {
       $body.removeClass('scrolled')
