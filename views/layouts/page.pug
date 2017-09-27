@@ -25,17 +25,3 @@ block content
                 if section.fields.showTitle
                   h3.section-heading!= section.fields.title
                 | !{section.fields.content}
-              //- if type == 'projectList'
-              //-   h3!= section.fields.title
-              //-   ul.projects
-              //-     each project in section.fields.projects
-              //-       li
-              //-         a(href=project.fields.slug data-direction="forward" data-color=project.fields.overlayColor)!= project.fields.title
-    //- section.page-section
-    //-   .row
-    //-     .column
-    //-       a.button(href="/footer-reveal-js" data-direction="forward" data-color="pink") footer-reveal
-    //-       br
-    //-       a.button(href="/holiday-search" data-direction="forward") holiday search
-    //-       br
-    //-       a.button(href="/" data-direction="back") home
