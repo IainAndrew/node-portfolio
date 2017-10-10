@@ -7,9 +7,9 @@ block content
         .image
           img.lazyload(src=page.headerImage.fields.file.url data-src=page.headerImage.fields.file.url alt="")
       .content.row
-        //- h1(data-speed=".3")!= page.heading ? page.heading : page.title
-        //- if page.subheading
-        //-   | !{page.subheading}
+        h1(data-speed=".3")!= page.heading ? page.heading : page.title
+        if page.subheading
+          | !{page.subheading}
   main.content
     if page.sections
       each section in page.sections
