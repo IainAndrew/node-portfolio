@@ -22,6 +22,15 @@
   text-transform:uppercase;
 }
 
+@keyframes blockGetBigger {
+  from {
+    width:0;
+  }
+  to {
+    width:100%;
+  }
+}
+
 .transition-overlay {
   position:fixed;
   top:0;
@@ -42,6 +51,23 @@
   @each $name, $value in $background-colors {
     &[data-color="#{$name}"] {
       background-color:$value;
+      .block {
+        background:$value;
+        &:before, &:after {
+          background:$value;
+        }
+      }
+    }
+  }
+  .block {
+    position:absolute;
+    height:calc(100% / 10);
+    right:100%;
+    background:$white;
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        top:calc(100% / 10 * #{$i - 1});
+      }
     }
   }
 }
@@ -54,12 +80,30 @@ body {
     }
     &.forward {
       .transition-overlay {
-        animation: slide-in-left 0.5s cubic-bezier(0.5, 0.31, 0.84, 0.05) forwards;
+        animation: slide-in-left 0.8s $cubic forwards;
+        .block {
+          @for $i from 1 through 10 {
+            $val: calc(2 / #{$i}) + 's';
+            &:nth-child(#{$i}) {
+              animation: blockGetBigger $val $cubic forwards;
+            }
+          }
+        }
       }
     }
     &.back {
       .transition-overlay {
-        animation: slide-in-right 0.5s cubic-bezier(0.5, 0.31, 0.84, 0.05) forwards;
+        animation: slide-in-right 0.8s $cubic forwards;
+        .block {
+          right:auto;
+          left:100%;
+          @for $i from 1 through 10 {
+            $val: calc(2 / #{$i}) + 's';
+            &:nth-child(#{$i}) {
+              animation: blockGetBigger $val $cubic forwards;
+            }
+          }
+        }
       }
     }
   }
