@@ -3,9 +3,9 @@ extends ../layout
 block content
   header.page-header(class=page.headerClass ? page.headerClass : undefined)
     .page-header-inner
-      if page.headerImage
-        .image
-          img.lazyload(src=page.headerImage.fields.file.url data-src=page.headerImage.fields.file.url alt="")
+      //- if page.headerImage
+      //-   .image
+      //-     img.lazyload(src=page.headerImage.fields.file.url data-src=page.headerImage.fields.file.url alt="")
       .content.row
         h1(data-speed=".3")!= page.heading ? page.heading : page.title
         if page.subheading
