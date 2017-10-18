@@ -23,27 +23,6 @@
   text-transform:uppercase;
 }
 
-@keyframes blockGetBigger {
-  from {
-    width:0;
-  }
-  to {
-    width:100%;
-  }
-}
-
-@keyframes overlayToTop {
-  0% {
-    transform:translate(0, 0);
-  }
-  99% {
-    transform:translate(0, -100%);
-  }
-  100% {
-    transform:translate(100%, 0);
-  }
-}
-
 .transition-overlay {
   position:fixed;
   top:0;
@@ -58,28 +37,11 @@
     pointer-events:none;
   }
   .loaded & {
-    animation:overlayToTop 0.5s ease forwards;
+    animation:overlayToTopAndReset 0.5s ease forwards;
   }
   @each $name, $value in $background-colors {
     &[data-color="#{$name}"] {
       background-color:$value;
-      .block {
-        background:$value;
-        &:before, &:after {
-          background:$value;
-        }
-      }
-    }
-  }
-  .block {
-    position:absolute;
-    height:calc(100% / 10);
-    right:100%;
-    background:$white;
-    @for $i from 1 through 10 {
-      &:nth-child(#{$i}) {
-        top:calc(100% / 10 * #{$i - 1});
-      }
     }
   }
   svg {
@@ -97,7 +59,6 @@
 
 body {
   background:$dark-gray;
-  // background:linear-gradient(to bottom, rgba($purple, 0.9), $blue);
   &.transition-out {
     .container {
       opacity:0.5;
@@ -113,14 +74,6 @@ body {
       }
       .transition-overlay {
         animation: slide-in-left 0.8s $cubic forwards;
-        .block {
-          @for $i from 1 through 10 {
-            $val: calc(2 / #{$i}) + 's';
-            &:nth-child(#{$i}) {
-              animation: blockGetBigger $val $cubic forwards;
-            }
-          }
-        }
       }
     }
     &.back {
@@ -129,22 +82,12 @@ body {
       }
       .transition-overlay {
         animation: slide-in-right 0.8s $cubic forwards;
-        .block {
-          right:auto;
-          left:100%;
-          @for $i from 1 through 10 {
-            $val: calc(2 / #{$i}) + 's';
-            &:nth-child(#{$i}) {
-              animation: blockGetBigger $val $cubic forwards;
-            }
-          }
-        }
       }
     }
   }
 }
 .container {
-  transition:margin-left 0.8s $cubic, margin-right 0.8s $cubic, opacity 0.8s ease;
+  transition:margin-left 0.8s $cubic, margin-right 0.8s $cubic, opacity 1s ease;
   background:$blue;
   background:linear-gradient(to bottom, rgba($purple, 0.9), $blue);
 }
@@ -152,9 +95,9 @@ section.page-section {
   padding:$section-padding 0;
   // background-color:white;
   position:relative;
-  &:first-of-type {
-    padding-top:0;
-  }
+  // &:first-of-type {
+  //   padding-top:0;
+  // }
   .section-heading {
     text-align:center;
     text-transform:uppercase;
