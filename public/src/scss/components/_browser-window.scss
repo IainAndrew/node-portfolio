@@ -71,6 +71,7 @@ $browser-border-radius:0.5em;
 .browser-window {
   border-radius:$browser-border-radius;
   overflow:hidden;
+  box-shadow:0 1.5em 3em -1em rgba(#000, 0.3);
   .browser-window-top {
     position:relative;
     width:100%;
