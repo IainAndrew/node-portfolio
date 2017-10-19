@@ -12,6 +12,7 @@ const client = contentful.createClient({
 })
 
 exports.getPage = (req, res, next) => {
+  console.log('getpage')
   client.getEntries({
     content_type: 'page',
     'fields.slug': req.path,
