@@ -54,7 +54,19 @@ $(document).ready(function() {
     })
   }
   checkIfInView()
-  $(window).on('scroll', function() {
-    checkIfInView()
-  })
+  const $blocks = $('.blocks')
+  // $(window).on('scroll', function() {
+  //   checkIfInView()
+  //   var scrollTop = $(window).scrollTop(),
+  //   elementOffset = $blocks.offset().top,
+  //   distance = (elementOffset - scrollTop) / 2;
+  //   console.log(distance)
+  //   $blocks.find('.block:first-child').css({
+  //     transform:'translateY(' + distance + 'px)'
+  //   })
+  //   $blocks.find('.block:nth-child(2)').css({
+  //     transform:'translateY(-' + distance + 'px)'
+  //   })
+  // })
+
 })

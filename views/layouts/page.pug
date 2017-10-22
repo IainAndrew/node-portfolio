@@ -7,20 +7,19 @@ block content
       //-   .image
       //-     img.lazyload(src=page.headerImage.fields.file.url data-src=page.headerImage.fields.file.url alt="")
       .content.row
-        h1(data-speed=".3")!= page.heading ? page.heading : page.title
+        h1(data-speed=".3")!= page.heading || page.title
         if page.subheading
           | !{page.subheading}
   main.content
     if page.sections
       each section in page.sections
         - var type = section.sys.contentType.sys.id
+        - var isFullWidth = section.fields.classes && section.fields.classes.indexOf('full-width') !== -1 ? true : false
         section.page-section(class=section.fields.classes ? section.fields.classes : undefined class=section.fields.backgroundImage ? 'has-background-image' : undefined)
-          //- if section.fields.classes && section.fields.classes.indexOf('skewed-bg') !== -1
-          //-   .bg
           if section.fields.backgroundImage
             img.background-image(src=section.fields.backgroundImage.fields.file.url, alt="")
-          div(class=section.fields.classes && section.fields.classes.indexOf('full-width') !== -1 ? 'clearfix' : 'row')
-            .column
+          div(class=isFullWidth ? 'clearfix' : 'row')
+            div(class=!isFullWidth ? 'column' : undefined)
               if type == 'pageSection'
                 if section.fields.showTitle
                   h3.section-heading!= section.fields.title

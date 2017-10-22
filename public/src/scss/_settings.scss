@@ -49,7 +49,7 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,900|Open+Sans:400,700,800,800i');
 
 $global-font-size: 14px;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(1000);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #fc5750,
@@ -111,7 +111,7 @@ $header-font-weight: $global-weight-black;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
-$header-lineheight: 1.4;
+$header-lineheight: 1.1;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
@@ -242,19 +242,19 @@ $breadcrumbs-item-slash: true;
 // 11. Button
 // ----------
 
-$button-padding: 0.85em 1em;
-$button-margin: 0 0 $global-margin 0;
+$button-padding: 1em 2em;
+$button-margin: 0;
 $button-fill: solid;
-$button-background: $primary-color;
+$button-background:transparent;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
-$button-color: $white;
-$button-color-alt: $body-font-color;
+$button-color: $body-font-color;
+$button-color-alt: $white;
 $button-radius: $global-radius;
 $button-sizes: (
   tiny: 0.6rem,
-  small: 0.75rem,
-  default: 0.9rem,
-  large: 1.25rem,
+  small: 0.8rem,
+  default: 1rem,
+  large: 1.3rem,
 );
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;

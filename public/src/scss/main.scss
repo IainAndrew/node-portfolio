@@ -21,6 +21,24 @@
 .button {
   font-family:$header-font-family;
   text-transform:uppercase;
+  font-weight:$global-weight-bold;
+  border:3px solid;
+  color:currentColor;
+  &.rainbow {
+    border:0;
+    position:relative;
+    background:$white;
+    &:after {
+      content:"";
+      position:absolute;
+      top:-3px;
+      left:-3px;
+      right:-3px;
+      bottom:-3px;
+      background:linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+      z-index:-1;
+    }
+  }
 }
 
 .transition-overlay {
@@ -144,6 +162,19 @@ section.page-section {
     .row {
       position:relative;
       z-index:1;
+    }
+  }
+}
+
+.blocks {
+  display:flex;
+  min-height:100vh;
+  .block {
+    width:50%;
+    background:$purple;
+    padding:2rem;
+    &:first-child {
+      background:$yellow;
     }
   }
 }
