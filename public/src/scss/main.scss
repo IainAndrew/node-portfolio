@@ -13,7 +13,9 @@
 'utils/mixins',
 'utils/animations',
 'components/navigation',
+'components/transition-overlay',
 'components/page-header',
+'components/page-section',
 'components/browser-window',
 'components/project-card',
 'components/footer';
@@ -37,40 +39,6 @@
       bottom:-3px;
       background:linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
       z-index:-1;
-    }
-  }
-}
-
-.transition-overlay {
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background-color:white;
-  z-index:10;
-  transition:transform 0.5s ease, opacity 0.3s ease;
-  &.fade {
-    opacity:0;
-    pointer-events:none;
-  }
-  .loaded & {
-    animation:overlayToTopAndReset 0.5s ease forwards;
-  }
-  @each $name, $value in $background-colors {
-    &[data-color="#{$name}"] {
-      background-color:$value;
-    }
-  }
-  svg {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    transition:opacity 0.5s ease;
-    opacity:0;
-    .loading &, .loaded & {
-      opacity: 1;
     }
   }
 }
@@ -116,86 +84,3 @@ main.content {
     background:none;
   }
 }
-
-section.page-section {
-  padding:$section-padding/2 0;
-  position:relative;
-  @include breakpoint(medium up) {
-    padding:$section-padding 0;
-  }
-  .section-heading {
-    text-align:center;
-    text-transform:uppercase;
-    position:relative;
-    margin-bottom:$section-padding/2;
-    @include breakpoint(medium up) {
-      margin-bottom:$section-padding;
-    }
-  }
-  @each $name, $value in $background-colors {
-    &.#{$name}:not(.white) {
-      color:$white;
-    }
-    &:not(.skewed-bg) {
-      &.#{$name} {
-        background-color:$value;
-      }
-    }
-    &.skewed-bg {
-      &.#{$name} {
-        .bg {
-          background-color:$value;
-        }
-      }
-    }
-  }
-  &.skewed-bg {
-    .bg {
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      transform:skewY(-10deg);
-      transform-origin:0;
-    }
-    .row {
-      position:relative;
-      z-index:1;
-    }
-  }
-}
-
-.multiple-buttons {
-  margin-top:2rem;
-  .button {
-    &:not(:last-child) {
-      @include breakpoint(medium up) {
-        margin-right:1rem;
-      }
-    }
-  }
-}
-
-// .project-info {
-//   text-align:center;
-//   .categories {
-//     margin:0;
-//     list-style:none;
-//     li {
-//       display:inline-block;
-//       font-style:italic;
-//       &:not(:last-child) {
-//         &:after {
-//           content:"";
-//           display:inline-block;
-//           width:4px;
-//           height:4px;
-//           border-radius:50%;
-//           background:currentColor;
-//           margin:0.2rem 0.5rem;
-//         }
-//       }
-//     }
-//   }
-// }
