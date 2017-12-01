@@ -10,7 +10,24 @@ block content
         h1(data-speed=".3")!= page.heading || page.title
         if page.subheading
           | !{page.subheading}
+        if page.categories && page.categories.length
+          .project-info
+            ul.categories
+              each cat in page.categories
+                li= cat.fields.title
+          
   main.content
+    //- if page.categories && page.categories.length
+    //-   .project-info
+    //-     ul.categories
+    //-       each cat in page.categories
+    //-         li= cat.fields.title
+    //-     .when
+    //-       strong When:
+    //-       | #{page.when}
+    //-     .company
+    //-       strong Company:
+    //-       | #{page.company}
     if page.sections
       each section in page.sections
         - var type = section.sys.contentType.sys.id
@@ -21,6 +38,6 @@ block content
           div(class=isFullWidth ? 'clearfix' : 'row')
             div(class=!isFullWidth ? 'column' : undefined)
               if type == 'pageSection'
-                if section.fields.showTitle
+                if section.fields.title && (section.fields.showTitle == undefined || section.fields.showTitle == true)
                   h3.section-heading!= section.fields.title
                 | !{section.fields.content}

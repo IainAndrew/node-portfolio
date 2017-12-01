@@ -1,4 +1,4 @@
-require('../../../public/src/scss/main.scss')
+import '../../../public/src/scss/main.scss'
 
 import 'jquery'
 
@@ -59,7 +59,7 @@ $(document).ready(function() {
     checkIfInView()
     // var scrollTop = $(window).scrollTop(),
     // elementOffset = $blocks.offset().top,
-    // distance = (elementOffset - scrollTop) / 2;
+    // distance = (elementOffset - scrollTop) / 2
     // console.log(distance)
     // $blocks.find('.block:first-child').css({
     //   transform:'translateY(' + distance + 'px)'

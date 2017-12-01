@@ -6947,9 +6947,9 @@ return jQuery;
 "use strict";
 
 
-__webpack_require__(62);
-
 __webpack_require__(102);
+
+__webpack_require__(62);
 
 $(document).ready(function () {
   var $body = $('body');
@@ -7008,7 +7008,7 @@ $(document).ready(function () {
     checkIfInView();
     // var scrollTop = $(window).scrollTop(),
     // elementOffset = $blocks.offset().top,
-    // distance = (elementOffset - scrollTop) / 2;
+    // distance = (elementOffset - scrollTop) / 2
     // console.log(distance)
     // $blocks.find('.block:first-child').css({
     //   transform:'translateY(' + distance + 'px)'
