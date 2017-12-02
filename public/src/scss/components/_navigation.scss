@@ -6,6 +6,34 @@
   z-index:2;
   color:$white;
   font-family:$header-font-family;
+  .nav-toggle {
+    float:right;
+    width:2rem;
+    height:2rem;
+    position:relative;
+    overflow:hidden;
+    margin:1rem;
+    @include breakpoint(medium up) {
+      display:none;
+    }
+    &:before {
+      content:"";
+      position:absolute;
+      top:50%;
+      right:0;
+      transform:translateY(-50%);
+      width:100%;
+      height:2px;
+      background:$white;
+      box-shadow:1rem 0.5rem $white, 0.5rem -0.5rem $white;
+      transition:width 0.3s ease;
+    }
+    &:hover {
+      &:before {
+        width:150%;
+      }
+    }
+  }
   .logo {
     float:left;
     padding:1rem;
@@ -18,6 +46,10 @@
     list-style:none;
     margin:0;
     float:right;
+    display:none;
+    @include breakpoint(medium up) {
+      display:block;
+    }
   }
   li {
     display:inline-block;

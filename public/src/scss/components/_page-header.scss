@@ -29,9 +29,9 @@ header.page-header {
       // background:$blue;
       // background:linear-gradient(to bottom, $purple, $blue);
       background:linear-gradient(to bottom, $blue, transparent);
-      // @include breakpoint(medium up) {
-      //   min-height:37rem;
-      // }
+      @include breakpoint(medium up) {
+        min-height:37rem;
+      }
     }
     // .image {
     //   &:after {
@@ -74,8 +74,8 @@ header.page-header {
     overflow:hidden;
     z-index:1;
     @include breakpoint(medium up) {
-      // min-height:25rem;
-      min-height:37rem;
+      min-height:30rem;
+      // min-height:37rem;
     }
   }
   .image {
