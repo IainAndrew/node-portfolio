@@ -45,32 +45,6 @@
 
 body {
   background:$dark-gray;
-  &.transition-out {
-    .container {
-      opacity:0.5;
-    }
-    .transition-overlay {
-      svg {
-        display:none;
-      }
-    }
-    &.forward {
-      .container {
-        margin-left:-5rem;
-      }
-      .transition-overlay {
-        animation: slide-in-left 0.8s $cubic forwards;
-      }
-    }
-    &.back {
-      .container {
-        margin-right:-5rem;
-      }
-      .transition-overlay {
-        animation: slide-in-right 0.8s $cubic forwards;
-      }
-    }
-  }
 }
 .container {
   transition:margin-left 0.8s $cubic, margin-right 0.8s $cubic, opacity 1s ease;

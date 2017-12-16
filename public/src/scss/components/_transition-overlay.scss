@@ -7,6 +7,9 @@
   background-color:white;
   z-index:10;
   transition:transform 0.5s ease, opacity 0.3s ease;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   &.fade {
     opacity:0;
     pointer-events:none;
@@ -17,17 +20,50 @@
   @each $name, $value in $background-colors {
     &[data-color="#{$name}"] {
       background-color:$value;
+      background:linear-gradient(to bottom, $value, darken($value, 10%));
+      svg {
+        fill:#fff;
+      }
     }
   }
   svg {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    transition:opacity 0.5s ease;
-    opacity:0;
-    .loading &, .loaded & {
-      opacity: 1;
+    // position:absolute;
+    // top:50%;
+    // left:50%;
+    // transform:translate(-50%,-50%);
+
+    // transition:opacity 0.5s ease;
+    // opacity:0;
+    // .loading &, .loaded & {
+    //   opacity: 1;
+    // }
+    fill:$body-font-color;
+  }
+}
+
+body.transition-out {
+  .container {
+    opacity:0.5;
+  }
+  // .transition-overlay {
+  //   svg {
+  //     display:none;
+  //   }
+  // }
+  &.forward {
+    .container {
+      margin-left:-10rem;
+    }
+    .transition-overlay {
+      animation: slide-in-left 0.8s $cubic forwards;
+    }
+  }
+  &.back {
+    .container {
+      margin-right:-10rem;
+    }
+    .transition-overlay {
+      animation: slide-in-right 0.8s $cubic forwards;
     }
   }
 }
