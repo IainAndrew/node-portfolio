@@ -7,9 +7,6 @@ $(document).ready(function() {
   $body.addClass('loading')
   setTimeout(function() {
     $body.removeClass('loading').addClass('loaded')
-    // $('.transition-overlay').css({
-    //   transform: 'translate(0, -100%)'
-    // })
   }, 500)
 
   $('a[data-direction]').on('click', function(e) {
