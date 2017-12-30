@@ -18,6 +18,7 @@
 'components/page-section',
 'components/browser-window',
 'components/project-card',
+'components/next-project',
 'components/footer';
 
 .button {
@@ -43,6 +44,11 @@
   }
 }
 
+a:not(.button) {
+  color:inherit;
+  text-decoration:underline;
+}
+
 body {
   background:$dark-gray;
 }
@@ -57,4 +63,19 @@ main.content {
   #home & {
     background:none;
   }
+}
+
+.about-blurb {
+  padding:4rem;
+  color:$white;
+  border:4px dashed $white;
+  p {
+    margin:0;
+  }
+}
+#about img {
+  position:absolute;
+  bottom:0;
+  right:0;
+  opacity:0.2;
 }

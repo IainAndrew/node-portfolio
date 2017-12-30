@@ -31,7 +31,7 @@ $mobile-border-radius:2.5em;
     .browser-window {
       &.skew-back {
         transform: perspective(700px) rotateY(-20deg) rotateX(5deg);
-        left:0;
+        left:-3rem;
       }
       &.skew-front {
         transform: perspective(700px) rotateY(20deg) rotateX(5deg);

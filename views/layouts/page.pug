@@ -11,7 +11,7 @@ block content
         if page.subheading
           | !{page.subheading}
         if page.categories && page.categories.length
-          .project-info
+          .project-info(data-speed=".15")
             ul.categories
               each cat in page.categories
                 li= cat.fields.title
@@ -32,12 +32,18 @@ block content
       each section in page.sections
         - var type = section.sys.contentType.sys.id
         - var isFullWidth = section.fields.classes && section.fields.classes.indexOf('full-width') !== -1 ? true : false
-        section.page-section(class=section.fields.classes ? section.fields.classes : undefined class=section.fields.backgroundImage ? 'has-background-image' : undefined)
-          if section.fields.backgroundImage
-            img.background-image(src=section.fields.backgroundImage.fields.file.url, alt="")
-          div(class=isFullWidth ? 'clearfix' : 'row')
-            div(class=!isFullWidth ? 'column' : undefined)
-              if type == 'pageSection'
-                if section.fields.title && (section.fields.showTitle == undefined || section.fields.showTitle == true)
-                  h3.section-heading!= section.fields.title
-                | !{section.fields.content}
+        if type == 'nextProjectSection'
+          section.next-project(class=section.fields.backgroundColor)
+            a(href=section.fields.url data-direction="forward" data-color=section.fields.backgroundColor)
+              .next-project-text= section.fields.firstProject ? 'First Project' : 'Next Project'
+              .title= section.fields.name
+        else
+          section.page-section(id=section.fields.id ? section.fields.id : undefined class=section.fields.classes ? section.fields.classes : undefined class=section.fields.backgroundImage ? 'has-background-image' : undefined)
+            if section.fields.backgroundImage
+              img.background-image(src=section.fields.backgroundImage.fields.file.url, alt="")
+            div(class=isFullWidth ? 'clearfix' : 'row')
+              div(class=!isFullWidth ? 'column' : undefined)
+                if type == 'pageSection'
+                  if section.fields.title && (section.fields.showTitle == undefined || section.fields.showTitle == true)
+                    h3.section-heading!= section.fields.title
+                  | !{section.fields.content}

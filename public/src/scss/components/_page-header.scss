@@ -3,71 +3,95 @@ header.page-header {
   position:relative;
   z-index:1;
   h2 {
-    font-size:2em;
-    margin-top:1rem;
+    font-size:1.5em;
+    margin-top:2rem;
   }
   h1 {
-    text-shadow:1px -1px rgba(#000,0.1);
+    // text-shadow:1px -1px rgba(#000,0.1);
   }
   &.home {
-    // &:after {
-    //   content:"";
-    //   position:absolute;
-    //   left:50%;
-    //   transform:translate(-50%, -50%) rotate(45deg);
-    //   width:1.5rem;
-    //   height:1.5rem;
-    //   // background:$blue;
-    //   transition:top 0.5s ease, border-radius 1s ease;
-    //   top:100%;
-    //   .scrolled & {
-    //     top:calc(100% - 2rem);
-    //     border-radius:0.5rem;
-    //   }
-    // }
     .page-header-inner {
-      // background:$blue;
-      // background:linear-gradient(to bottom, $purple, $blue);
+      background:$blue;
       background:linear-gradient(to bottom, $blue, transparent);
       @include breakpoint(medium up) {
         min-height:37rem;
       }
     }
-    // .image {
-    //   &:after {
-    //     background:$blue;
-    //     background:linear-gradient(to bottom, rgba($purple, 0.9), $blue);
-    //     opacity:1;
-    //   }
+    // h1, h2 {
+    //   text-shadow: 0.01em 0 0 $purple, 0 0.01em 0 $blue, 0.02em 0.01em 0 $purple, 0.01em 0.02em 0 $blue, 0.03em 0.02em 0 $purple, 0.02em 0.03em 0 $blue, 0.04em 0.03em 0 $purple, 0.03em 0.04em 0 $blue, 0.05em 0.04em 0 $purple, 0.04em 0.05em 0 $blue, 0.06em 0.05em 0 $purple, 0.05em 0.06em 0 $blue, 0.07em 0.06em 0 $purple, 
+    //   0.1em 0.1em 0.3em rgba(#000, 0.3);
     // }
-    h1, h2 {
-      text-shadow: 0.01em 0 0 $purple, 0 0.01em 0 $blue, 0.02em 0.01em 0 $purple, 0.01em 0.02em 0 $blue, 0.03em 0.02em 0 $purple, 0.02em 0.03em 0 $blue, 0.04em 0.03em 0 $purple, 0.03em 0.04em 0 $blue, 0.05em 0.04em 0 $purple, 0.04em 0.05em 0 $blue, 0.06em 0.05em 0 $purple, 0.05em 0.06em 0 $blue, 0.07em 0.06em 0 $purple, 0.1em 0.1em 0.3em rgba(#000, 0.3);
+    @function makelongshadow($color, $times) {
+      $val: 0px 0px $color;
+      @for $i from 1 through $times {
+        $val: #{$val}, -#{$i}px #{$i}px #{$color};
+      }
+      @return $val;
+    }
+    @keyframes textshadow {
+      0% {
+        text-shadow: makelongshadow($pink, 0);
+      }
+      100% {
+        text-shadow: makelongshadow($pink, 150);
+      }
+    }
+    @keyframes textshadowreverse {
+      0% {
+        text-shadow: makelongshadow($pink, 150);
+      }
+      100% {
+        text-shadow: makelongshadow($pink, 0);
+      }
+    }
+    @keyframes fly {
+      0% {
+        margin-left:-15rem;
+        margin-top:15rem;
+      }
+      100% {
+        margin-left:0;
+        margin-top:0;
+      }
     }
     h1 {
-      text-transform:uppercase;
+      animation:textshadow 3s ease forwards, fly 3s ease forwards;
+      .scrolled & {
+        animation:fly 3s ease forwards, textshadowreverse 1.5s ease forwards;
+        margin-left:0;
+        margin-top:0;
+      }
+    }
+    h1 {
+      // text-transform:uppercase;
       font-size:3em;
       @include breakpoint(medium up) {
-        font-size:7em;
+        font-size:6em;
       }
     }
     h2 {
       font-size:2em;
+      margin-top:1rem;
       @include breakpoint(medium up) {
-        font-size:3em;
+        // font-size:3em;
       }
     }
   }
   &.footer-reveal {
-    background:#ecbe46;
-    background:linear-gradient(to bottom, rgba(#ecbe46, 0.9), darken(#ecbe46, 10%));
+    background:$yellow;
+    background:linear-gradient(to bottom, rgba($yellow, 0.9), darken($yellow, 10%));
   }
   &.soccer {
-    background:#c45c60;
-    background:linear-gradient(to bottom, rgba(#c45c60, 0.9), darken(#c45c60, 10%));
+    background:$red;
+    background:linear-gradient(to bottom, rgba($red, 0.9), darken($red, 10%));
   }
   &.trt {
-    background:#67c7c9;
-    background:linear-gradient(to bottom, rgba(#67c7c9, 0.9), darken(#67c7c9, 10%));
+    background:$turquoise;
+    background:linear-gradient(to bottom, rgba($turquoise, 0.9), darken($turquoise, 10%));
+  }
+  &.tours {
+    background:$grey;
+    background:linear-gradient(to bottom, rgba($grey, 0.9), darken($grey, 10%));
   }
   .page-header-inner {
     position:relative;

@@ -68,6 +68,27 @@
       color:inherit;
       display:block;
       padding:1rem 2rem;
+      text-decoration:none;
+      &.active {
+        span:after {
+          width:100%;
+        }
+      }
+    }
+    span {
+      position:relative;
+      font-weight:bold;
+      &:after {
+        content:"";
+        position:absolute;
+        bottom:4px;
+        left:0;
+        height:6px;
+        width:0;
+        background:$pink;
+        z-index:-1;
+        transition:width 0.3s ease;
+      }
     }
   }
 }

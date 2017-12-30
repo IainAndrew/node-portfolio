@@ -1,3 +1,13 @@
+.project {
+  padding:6rem 0;
+  &:first-child {
+    padding-top:0;
+  }
+  &:last-child {
+    padding-bottom:0;
+  }
+}
+
 .project-card {
   background:$white;
   box-shadow:0 2em 10em -4em rgba(#000,0.6);
@@ -26,7 +36,9 @@
     .project-card-categories {
       margin:0;
       list-style:none;
+      font-size:0;
       li {
+        font-size:1rem;
         display:inline-block;
         font-style:italic;
         &:not(:last-child) {
@@ -43,8 +55,9 @@
       }
     }
     .project-card-title {
-      text-transform:uppercase;
+      // text-transform:uppercase;
       font-size:2.2em;
+      margin:1rem 0;
     }
   }
   .project-card-image {

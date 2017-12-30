@@ -45,10 +45,16 @@ section.page-section {
       z-index:1;
     }
   }
+  .note {
+    font-style:italic;
+  }
+}
+
+.overview-buttons {
+  margin-top:2rem;
 }
 
 .multiple-buttons {
-  margin-top:2rem;
   .button {
     &:not(:last-child) {
       @include breakpoint(medium up) {

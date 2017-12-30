@@ -1,0 +1,54 @@
+.next-project {
+  text-align:center;
+  transition:all 0.3s ease;
+  color:$white;
+  background:$body-font-color;
+  @each $name, $value in $background-colors {
+    &.#{$name} {
+      a {
+        @include breakpoint(small only) {
+          background-color:$value;
+        }
+      }
+    }
+  }
+  a {
+    display:block;
+    padding:4rem 1rem;
+    text-decoration:none;
+    font-weight:bold;
+    position:relative;
+  }
+  .next-project-text {
+    transition:all 0.3s ease;
+  }
+  .title {
+    font-size:2em;
+    transition:all 0.6s ease;
+    @include breakpoint(medium up) {
+      position:absolute;
+      top:calc(50% + 1rem);
+      left:50%;
+      transform:translate(-50%, -50%);
+      opacity:0;
+      font-size:3em;
+    }
+  }
+  @include breakpoint(medium up) {
+    &:hover {
+      @each $name, $value in $background-colors {
+        &.#{$name} {
+          background-color:$value;
+        }
+      }
+      .title {
+        top:50%;
+        opacity:1;
+      }
+      .next-project-text {
+        transform:translateY(-1rem);
+        opacity:0.3;
+      }
+    }
+  }
+}

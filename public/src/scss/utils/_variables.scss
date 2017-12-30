@@ -1,18 +1,22 @@
 // $pink: #e91e63;
 
-$pink: #fd97bc;
-$yellow: #fede3a;
+$pink: #e28d9c;
+$yellow: #ecbe46;
 $orange: #f35336;
-$red: #d1203a;
+$red: #c45c60;
 $green: #a6ffcb;
 $blue: #05d5ff;
 $purple: #53f;
+$grey: #263238;
+$turquoise: #67c7c9;
 
 $background-colors: (
-  'blue': #05d5ff,
-  'purple': #53f,
-  'turquoise': #67c7c9,
-  'red': #c45c60
+  'blue': $blue,
+  'purple': $purple,
+  'turquoise': $turquoise,
+  'red': $red,
+  'yellow': $yellow,
+  'grey': $grey
 );
 
 $section-padding:6rem;

@@ -47,6 +47,13 @@
 // ---------
 
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,900|Open+Sans:400,700,800,800i');
+@font-face {
+  font-family: "pinopolisregular";
+  src: url("http://res.cloudinary.com/iainandrew/raw/upload/v1514462093/pinopolis-webfont_njxtzt.woff2") format("woff2"),
+       url("http://res.cloudinary.com/iainandrew/raw/upload/v1514462093/pinopolis-webfont_btryjs.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 $global-font-size: 14px;
 $global-width: rem-calc(1000);
@@ -64,7 +71,7 @@ $dark-gray: #515151;
 $white: #ffffff;
 $body-background: $white;
 $body-font-color: #6b7c93;
-$body-font-family: 'Merriweather', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: 'pinopolisregular', 'Merriweather', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -106,7 +113,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$header-font-family: 'pinopolisregular', 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $header-font-weight: $global-weight-black;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
