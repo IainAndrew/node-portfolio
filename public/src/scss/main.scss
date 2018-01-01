@@ -66,16 +66,31 @@ main.content {
 }
 
 .about-blurb {
-  padding:4rem;
+  padding:2rem;
+  padding-bottom:18rem;
   color:$white;
   border:4px dashed $white;
+  @include breakpoint(medium up) {
+    padding:4rem;
+  }
   p {
     margin:0;
   }
+}
+#about .columns {
+  position:relative;
+  z-index:1;
 }
 #about img {
   position:absolute;
   bottom:0;
   right:0;
-  opacity:0.2;
+  opacity:0.4;
+  @include breakpoint(medium up) {
+    right:-10rem;
+    opacity:0.2;
+  }
+  @include breakpoint(large up) {
+    right:0;
+  }
 }
