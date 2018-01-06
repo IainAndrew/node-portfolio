@@ -3,9 +3,8 @@ extends ../layout
 block content
   header.page-header(class=page.headerClass ? page.headerClass : undefined)
     .page-header-inner
-      //- if page.headerImage
-      //-   .image
-      //-     img.lazyload(src=page.headerImage.fields.file.url data-src=page.headerImage.fields.file.url alt="")
+      //- .image
+      //-   img.lazyload(src="https://res.cloudinary.com/iainandrew/image/upload/v1506093577/truly-responsive-tables-desktop_dikaox.png" data-src="https://res.cloudinary.com/iainandrew/image/upload/v1506093577/truly-responsive-tables-desktop_dikaox.png" alt="")
       .content.row
         h1(data-speed=".3")!= page.heading || page.title
         if page.subheading

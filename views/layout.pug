@@ -6,6 +6,9 @@ html
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no")
     title !{title || error.status} - Iain Andrew
+    if page.description
+      meta(name="description" content=page.description)
+    meta(name="author" content="Iain Andrew")
     link(rel="stylesheet", href="/css/style.css")
     link(rel='apple-touch-icon', sizes='180x180', href='http://res.cloudinary.com/iainandrew/raw/upload/v1514822463/icons/apple-touch-icon.png')
     link(rel='icon', type='image/png', sizes='32x32', href='http://res.cloudinary.com/iainandrew/raw/upload/v1514822463/icons/favicon-32x32.png')
@@ -15,6 +18,23 @@ html
     link(rel='shortcut icon', href='http://res.cloudinary.com/iainandrew/raw/upload/v1514822463/icons/favicon.ico')
     meta(name='msapplication-config', content='http://res.cloudinary.com/iainandrew/raw/upload/v1514822463/icons/browserconfig.xml')
     meta(name='theme-color', content='#05d5ff')
+    script.
+      (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:739156,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-48617559-6")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-48617559-6');
+
     block header
   body(id=page && page.pageId ? page.pageId : undefined)
     .transition-overlay(data-color=page && page.overlayColor ? page.overlayColor : undefined)

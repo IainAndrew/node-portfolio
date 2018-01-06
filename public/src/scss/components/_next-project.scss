@@ -2,7 +2,7 @@
   text-align:center;
   transition:all 0.3s ease;
   color:$white;
-  background:$body-font-color;
+  background:$pink;
   @each $name, $value in $background-colors {
     &.#{$name} {
       a {
