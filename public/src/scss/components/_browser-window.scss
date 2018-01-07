@@ -127,6 +127,16 @@ $mobile-border-radius:2.5em;
   position:relative;
   box-shadow:0 1.5em 3em -1em rgba(#000, 0.3);
   margin:0 auto;
+  font-size:0.5em;
+  @include breakpoint(400px up) {
+    font-size:0.6em;
+  }
+  @include breakpoint(medium up) {
+    font-size:0.8em;
+  }
+  @include breakpoint(large up) {
+    font-size:1em;
+  }
   &.small {
     font-size:0.4em;
     @include breakpoint(400px up) {
@@ -135,9 +145,6 @@ $mobile-border-radius:2.5em;
     @include breakpoint(medium up) {
       font-size:0.6em;
     }
-    // img {
-    //   width:10rem;
-    // }
   }
   &:after {
     content:"";
@@ -166,20 +173,19 @@ $mobile-border-radius:2.5em;
 
 .browser-windows-desktop-mobile {
   position:relative;
-  // @include breakpoint(large up) {
-    .browser-window {
-      margin:0;
-    }
-    .mobile-window {
-      position:absolute;
-      bottom:-4rem;
-      right:1rem;
-      &.small {
-        right:-1rem;
-        @include breakpoint(medium up) {
-          right:-3rem;
-        }
+  margin-bottom:4rem;
+  .browser-window {
+    margin:0;
+  }
+  .mobile-window {
+    position:absolute;
+    bottom:-4rem;
+    right:1rem;
+    &.small {
+      right:-1rem;
+      @include breakpoint(medium up) {
+        right:-3rem;
       }
     }
-  // }
+  }
 }

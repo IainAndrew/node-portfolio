@@ -64,7 +64,7 @@ body.transition-out {
   }
   &.forward {
     .container {
-      margin-left:-10rem;
+      transform:translateX(-10rem);
     }
     .transition-overlay {
       animation: slide-in-left 0.8s $cubic forwards;
@@ -72,7 +72,7 @@ body.transition-out {
   }
   &.back {
     .container {
-      margin-right:-10rem;
+      transform:translateX(10rem);
     }
     .transition-overlay {
       animation: slide-in-right 0.8s $cubic forwards;

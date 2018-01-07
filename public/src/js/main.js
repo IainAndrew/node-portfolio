@@ -48,10 +48,7 @@ $(document).ready(function() {
   const checkIfInView = () => {
     $(".scroll-to-me").each(function(index, item) {
       let $item = $(item);
-      if (
-        $(window).scrollTop() >=
-        $item.offset().top - window.innerHeight + 50
-      ) {
+      if ($(window).scrollTop() >= ($item.offset().top - window.innerHeight + 45)) {
         $item.addClass("in-view");
       } else {
         $item.removeClass("in-view");
