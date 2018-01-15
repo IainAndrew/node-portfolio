@@ -21,6 +21,9 @@
   transition:all 0.3s ease;
   display:flex;
   flex-wrap:wrap;
+  @include breakpoint(medium up) {
+    display:block;
+  }
   &.in-view {
     opacity:1;
     transform:translateY(0);
