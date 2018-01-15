@@ -37,17 +37,17 @@ html
   body(id=page && page.pageId ? page.pageId : undefined)
     .transition-overlay(data-color=page && page.overlayColor ? page.overlayColor : undefined)
       .hide
-        <svg id="logo" width="5rem" viewBox="0 0 305 250" xmlns="http://www.w3.org/2000/svg"><path d="M180.315,0.5l124.02,248.03l-117.82,-49.61l-24.8,-49.6l18.6,-37.21l24.81,49.61l24.8,12.4l-49.61,-99.21l-62,124.01l-117.82,49.61l24.81,-49.61l68.2,-136.41l18.61,37.2l-37.21,74.41l24.8,-12.4l80.61,-161.22Zm-55.8,0l18.6,37.2l-18.6,37.21l-18.6,-37.21l-0.01,0l18.61,-37.2Z"/></svg>
+        <svg id="logo" width="70" viewBox="0 0 305 250" xmlns="http://www.w3.org/2000/svg"><path d="M180.315,0.5l124.02,248.03l-117.82,-49.61l-24.8,-49.6l18.6,-37.21l24.81,49.61l24.8,12.4l-49.61,-99.21l-62,124.01l-117.82,49.61l24.81,-49.61l68.2,-136.41l18.61,37.2l-37.21,74.41l24.8,-12.4l80.61,-161.22Zm-55.8,0l18.6,37.2l-18.6,37.21l-18.6,-37.21l-0.01,0l18.61,-37.2Z"/></svg>
       .logo
         .logo-1
           svg
-            use(href="#logo")
+            use(xlink:href="#logo")
         .logo-2
           svg
-            use(href="#logo")
+            use(xlink:href="#logo")
     .container
       include ./navigation
       block content
       include ./footer
-    script(src=env === 'production' ? "https://s3-eu-west-1.amazonaws.com/iainandrew/dist/js/main.min.js.gz" : "/js/main.min.js")
+    script(src=env === 'production' ? "https://s3-eu-west-1.amazonaws.com/iainandrew/dist/js/main.min.js.gz" : "/js/main.js")
     block scripts

@@ -38,13 +38,15 @@
 }
 .has-tooltip {
   position:relative;
-  &:hover {
-    .tooltip {
-      transform:translateX(-50%) scale(1,1);
-    }
-    .tooltip-inner {
-      transform:scaleY(1);
-      transition-delay:0.3s;
+  @include breakpoint(medium up) {
+    &:hover {
+      .tooltip {
+        transform:translateX(-50%) scale(1,1);
+      }
+      .tooltip-inner {
+        transform:scaleY(1);
+        transition-delay:0.3s;
+      }
     }
   }
 }
