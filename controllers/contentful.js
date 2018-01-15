@@ -23,4 +23,5 @@ exports.getPage = (req, res, next) => {
   }).catch(err => {
     console.log(err);
   })
+  res.locals.env = require('express')().get('env');
 }

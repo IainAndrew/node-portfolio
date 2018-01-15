@@ -25,10 +25,19 @@ nav.main-nav
     //-       class=homepage ? 'anchor' : undefined)
     //-       span Contact
 
-    //- ul
-    //-   li
-    //-     a(href="mailto:hi@iainandrew.com") Email me
-    //-   li
-    //-     a(href="#") CV
-    //-   li
-    //-     a(href="https://github.com/IainAndrew" target="_blank") Github
+    ul
+      li
+        a.has-tooltip(href="mailto:hi@iainandrew.com")
+          i.icon-mail
+          .tooltip.pink
+            .tooltip-inner Email me
+      li
+        a.has-tooltip(href="https://github.com/IainAndrew" target="_blank")
+          i.icon-github
+          .tooltip.pink
+            .tooltip-inner Github
+      li
+        a.has-tooltip(href="#")
+          i.icon-doc
+          .tooltip.pink
+            .tooltip-inner My CV

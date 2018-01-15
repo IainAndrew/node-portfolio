@@ -12,6 +12,7 @@
 'utils/variables',
 'utils/mixins',
 'utils/animations',
+'components/icon-font',
 'components/navigation',
 'components/transition-overlay',
 'components/page-header',
@@ -19,7 +20,8 @@
 'components/browser-window',
 'components/project-card',
 'components/next-project',
-'components/footer';
+'components/footer',
+'components/tooltip';
 
 .button {
   font-family:$header-font-family;
@@ -93,7 +95,9 @@ $border-width:8px;
     background:currentColor;
   }
 }
-
+#about {
+  overflow:hidden;
+}
 #about .columns {
   position:relative;
   z-index:1;
@@ -115,6 +119,7 @@ $border-width:8px;
   padding:2rem;
   color:$white;
   margin-left:2rem;
+  max-width:calc(100% - 2rem);
   opacity:0;
   transform:translateX(5rem);
   transition:all 0.6s ease;
@@ -130,7 +135,7 @@ $border-width:8px;
   }
 }
 .about-links {
-  padding:2rem;
+  padding:1rem;
   margin-top:-2rem;
   color:$white;
   float:right;
@@ -148,5 +153,9 @@ $border-width:8px;
   }
   li {
     display:inline-block;
+    a {
+      padding:0.5rem 1rem;
+      font-size:1.3em;
+    }
   }
 }

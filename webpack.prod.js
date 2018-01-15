@@ -2,6 +2,8 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 const BabiliPlugin = require('babili-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
+const S3Plugin = require('webpack-s3-plugin')
 
 module.exports = {
   entry: {
@@ -50,6 +52,39 @@ module.exports = {
         ]
       }
     }),
-    new BabiliPlugin()
+    new BabiliPlugin(),
+    new CompressionPlugin({
+      test: /\.(js|css)$/,
+			asset: '[path].gz[query]',
+			algorithm: 'gzip',
+      deleteOriginalAssets: true
+    }),
+    new S3Plugin({
+      exclude: /.*\.(js|css)$/, // exclude non-gzipped js/css
+      s3Options: {
+        accessKeyId: require('./aws.json').accessKeyId,
+        secretAccessKey: require('./aws.json').secretAccessKey,
+        region: 'eu-west-1'
+      },
+      s3UploadOptions: {
+        Bucket: 'iainandrew',
+        CacheControl: 'max-age=315360000, no-transform, public',
+        ContentEncoding(fileName) {
+          if (/\.gz/.test(fileName)) {
+            return 'gzip'
+          }
+        },
+        ContentType(fileName) {
+          if (/\.css/.test(fileName)) {
+            return 'text/css'
+          }
+          if (/\.js/.test(fileName)) {
+            return 'text/javascript'
+          }
+        },
+      },
+      basePath: 'dist',
+      directory: 'public/dist'
+    })
   ]
 };
