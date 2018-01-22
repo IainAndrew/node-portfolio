@@ -20,7 +20,7 @@ html
     link(rel='shortcut icon', href='https://s3-eu-west-1.amazonaws.com/iainandrew/icons/favicon.ico')
     meta(name='msapplication-config', content='https://s3-eu-west-1.amazonaws.com/iainandrew/icons/browserconfig.xml')
     meta(name='theme-color', content='#05d5ff')
-    link(rel="stylesheet", href=env === 'production' ? "https://s3-eu-west-1.amazonaws.com/iainandrew/dist/css/style.css.gz" : "/css/style.css")
+    link(rel="stylesheet", href=env === 'production' ? "https://s3-eu-west-1.amazonaws.com/iainandrew/dist/css/style.css.gz?v=1" : "/css/style.css")
     script.
       (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -52,5 +52,5 @@ html
       include ./navigation
       block content
       include ./footer
-    script(src=env === 'production' ? "https://s3-eu-west-1.amazonaws.com/iainandrew/dist/js/main.min.js.gz" : "/js/main.js")
+    script(src=env === 'production' ? "https://s3-eu-west-1.amazonaws.com/iainandrew/dist/js/main.min.js.gz?v=1" : "/js/main.js")
     block scripts

@@ -6965,9 +6965,9 @@ $(document).ready(function () {
     var href = $(this).attr("href");
     $body.addClass("transition-out " + direction || "");
     $(".transition-overlay").attr("data-color", color || "");
-    setTimeout(function () {
+    $(".transition-overlay").on("oanimationend animationend webkitAnimationEnd", function (event) {
       window.location = href;
-    }, 500);
+    });
   });
 
   var $headerElements = $(".page-header [data-speed]");
@@ -7004,7 +7004,9 @@ $(document).ready(function () {
       }
     });
   };
-  checkIfInView();
+  setTimeout(function () {
+    checkIfInView();
+  }, 1000);
 
   $(window).on("scroll", function () {
     checkIfInView();
