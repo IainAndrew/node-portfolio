@@ -1,4 +1,3 @@
 node_modules/
 .DS_Store
-contentful.config.json
 aws.json
