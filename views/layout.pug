@@ -50,5 +50,6 @@ html
       include ./navigation
       block content
       include ./footer
-    script(src=env === 'production' ? "https://s3-eu-west-1.amazonaws.com/iainandrew/dist/js/main.min.js.gz?v=1" : "/js/main.js")
+    //- script(src=env === 'production' ? "https://s3-eu-west-1.amazonaws.com/iainandrew/dist/js/main.min.js.gz?v=1" : "/js/main.js")
+    script(src="/js/main.js")
     block scripts
