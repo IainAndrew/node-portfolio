@@ -12,15 +12,13 @@ html
     if page && page.description
       meta(name="description" content=page.description)
     meta(name="author" content="Iain Andrew")
-    link(rel='apple-touch-icon', sizes='180x180', href='https://s3-eu-west-1.amazonaws.com/iainandrew/icons/apple-touch-icon.png')
-    link(rel='icon', type='image/png', sizes='32x32', href='https://s3-eu-west-1.amazonaws.com/iainandrew/icons/favicon-32x32.png')
-    link(rel='icon', type='image/png', sizes='16x16', href='https://s3-eu-west-1.amazonaws.com/iainandrew/icons/favicon-16x16.png')
-    link(rel='manifest', href='https://s3-eu-west-1.amazonaws.com/iainandrew/icons/manifest.json')
-    link(rel='mask-icon', href='https://s3-eu-west-1.amazonaws.com/iainandrew/icons/safari-pinned-tab.svg', color='#05d5ff')
-    link(rel='shortcut icon', href='https://s3-eu-west-1.amazonaws.com/iainandrew/icons/favicon.ico')
-    meta(name='msapplication-config', content='https://s3-eu-west-1.amazonaws.com/iainandrew/icons/browserconfig.xml')
+    link(rel='apple-touch-icon', sizes='180x180', href='https://images.ctfassets.net/v5eaxhcz73sm/67oefCDDoEd8M6VG5TWFdm/fec803822c1b93ea15ab6c911ff13685/apple-touch-icon.png')
+    link(rel='icon', type='image/png', sizes='32x32', href='https://images.ctfassets.net/v5eaxhcz73sm/4fULRixIe4dEv2xdDDSOD5/9b9584d4470d6cc65449debaeab2fc8f/favicon-32x32.png')
+    link(rel='icon', type='image/png', sizes='16x16', href='https://images.ctfassets.net/v5eaxhcz73sm/6rjDHYI4xTmFwZABHjMWqy/db7883b1bf1648301e22e30afbee4dfb/favicon-16x16.png')
+    link(rel='shortcut icon', href='https://assets.ctfassets.net/v5eaxhcz73sm/6e70VXrwwyttRZcTU8sniG/1dd9dcc703b64a23254ad77cb8ddb650/favicon.ico')
     meta(name='theme-color', content='#05d5ff')
-    link(rel="stylesheet", href=env === 'production' ? "https://s3-eu-west-1.amazonaws.com/iainandrew/dist/css/style.css.gz?v=1" : "/css/style.css")
+    //- link(rel="stylesheet", href=env === 'production' ? "https://s3-eu-west-1.amazonaws.com/iainandrew/dist/css/style.css.gz?v=1" : "/css/style.css")
+    link(rel="stylesheet", href="/css/style.css")
     script.
       (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
