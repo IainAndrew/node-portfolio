@@ -34,7 +34,7 @@
     "extract-text-webpack-plugin": "^3.0.1",
     "foundation-sites": "^6.4.3",
     "jquery": "^3.2.1",
-    "lazysizes": "^4.0.0-rc1",
+    "lazysizes": "^5.2.1",
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.2",
     "object-fit-images": "^3.2.3",
