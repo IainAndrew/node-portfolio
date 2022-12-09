@@ -15,7 +15,7 @@
     "contentful": "^4.3.0",
     "cookie-parser": "~1.4.3",
     "debug": "~3.1.0",
-    "express": "~4.16.1",
+    "express": "~4.17.3",
     "express-redis-cache": "^1.0.0",
     "morgan": "~1.9.0",
     "node-sass-middleware": "^0.11.0",
