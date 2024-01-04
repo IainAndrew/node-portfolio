@@ -1,3 +1,4 @@
 module.exports = (env) => {
-  return require(`./webpack.${env}.js`)
+  const e = env.dev ? "dev" : "prod";
+  return require(`./webpack.${e}.js`)
 }
