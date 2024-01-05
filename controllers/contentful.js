@@ -2,11 +2,10 @@
 
 const contentful = require('contentful')
 const isDevMode = require('express')().get('env') === 'development';
-const contentfulConfig = require('../contentful.config.json');
 
 const client = contentful.createClient({
   space: 'v5eaxhcz73sm',
-  accessToken: isDevMode ? contentfulConfig.devAccessToken : contentfulConfig.prodAccessToken,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   host: isDevMode ? 'preview.contentful.com' : undefined
 });
 
