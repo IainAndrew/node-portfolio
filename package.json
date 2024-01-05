@@ -2,6 +2,7 @@
   "name": "node-portfolio",
   "version": "1.0.0",
   "private": true,
+  "main": "app.js",
   "scripts": {
     "start": "node ./bin/www",
     "watch": "npm-run-all --parallel watch:server watch:build",
