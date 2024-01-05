@@ -8,9 +8,9 @@
   min-width:5rem;
   z-index:1;
   &.pink {
-    border-color:$pink;
+    border-color:$dark-grey;
     &:before {
-      background:$pink;
+      background:$dark-grey;
     }
   }
   &:before {

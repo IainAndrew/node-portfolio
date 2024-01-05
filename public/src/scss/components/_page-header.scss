@@ -29,18 +29,18 @@ header.page-header {
     }
     @keyframes textshadow {
       0% {
-        text-shadow: longTextShadow($pink, 0);
+        text-shadow: longTextShadow($dark-grey, 0);
       }
       100% {
-        text-shadow: longTextShadow($pink, 150);
+        text-shadow: longTextShadow($dark-grey, 150);
       }
     }
     @keyframes textshadowreverse {
       0% {
-        text-shadow: longTextShadow($pink, 150);
+        text-shadow: longTextShadow($dark-grey, 150);
       }
       100% {
-        text-shadow: longTextShadow($pink, 0);
+        text-shadow: longTextShadow($dark-grey, 0);
       }
     }
     @keyframes fly {
