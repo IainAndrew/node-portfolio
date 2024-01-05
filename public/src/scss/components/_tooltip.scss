@@ -22,7 +22,8 @@
     width:10px;
     height:10px;
     background:$body-font-color;
-    transform:rotate(45deg);
+    transform:scale(0) rotate(45deg);
+    transition: transform 0.3s ease;
   }
   .tooltip-inner {
     padding:1rem;
@@ -42,6 +43,10 @@
     &:hover {
       .tooltip {
         transform:translateX(-50%) scale(1,1);
+        &:before {
+          transform:scale(1) rotate(45deg);
+          transition-delay:0.3s;
+        }
       }
       .tooltip-inner {
         transform:scaleY(1);

@@ -3170,7 +3170,8 @@ footer {
   width: 10px;
   height: 10px;
   background: #6b7c93;
-  transform: rotate(45deg);
+  transform: scale(0) rotate(45deg);
+  transition: transform 0.3s ease;
 }
 .tooltip .tooltip-inner {
   padding: 1rem;
@@ -3190,6 +3191,10 @@ footer {
 @media print, screen and (min-width: 40em) {
   .has-tooltip:hover .tooltip {
     transform: translateX(-50%) scale(1, 1);
+  }
+  .has-tooltip:hover .tooltip:before {
+    transform: scale(1) rotate(45deg);
+    transition-delay: 0.3s;
   }
   .has-tooltip:hover .tooltip-inner {
     transform: scaleY(1);
