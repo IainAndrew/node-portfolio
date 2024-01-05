@@ -68,8 +68,11 @@ header.page-header {
       }
     }
     h2 {
-      font-size:2em;
+      font-size:1em;
       margin-top:1rem;
+      @include breakpoint(medium up) {
+        font-size:2em;
+      }
     }
   }
   &.footer-reveal {

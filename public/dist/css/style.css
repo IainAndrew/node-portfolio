@@ -2551,8 +2551,13 @@ header.page-header.home h1 {
   }
 }
 header.page-header.home h2 {
-  font-size: 2em;
+  font-size: 1em;
   margin-top: 1rem;
+}
+@media print, screen and (min-width: 40em) {
+  header.page-header.home h2 {
+    font-size: 2em;
+  }
 }
 header.page-header.footer-reveal {
   background: #ecbe46;
