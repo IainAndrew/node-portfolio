@@ -63,3 +63,8 @@ $(document).ready(function() {
     checkIfInView();
   });
 });
+
+$(window).on("pagehide", function(event) {
+  $("body").removeClass("transition-out back forward")
+  $(".transition-overlay").off();
+});
