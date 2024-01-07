@@ -6,6 +6,7 @@ header.page-header {
   h2 {
     font-size:1em;
     margin-top:2rem;
+    line-height: 1.5;
     @include breakpoint(medium up) {
       font-size:1.5em;
     }
@@ -75,7 +76,11 @@ header.page-header {
       }
     }
   }
-  &.footer-reveal {
+  &.highlights {
+    background:$green;
+    background:linear-gradient(to bottom, $green, darken($green, 10%));
+  }
+  &.wia {
     background:$yellow;
     background:linear-gradient(to bottom, $yellow, darken($yellow, 10%));
   }
