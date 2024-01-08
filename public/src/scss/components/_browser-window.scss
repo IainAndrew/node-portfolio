@@ -80,9 +80,6 @@ $mobile-border-radius:2.5em;
         width:27rem;
       }
     }
-    img {
-      width:100%;
-    }
   }
 }
 
@@ -111,7 +108,7 @@ $mobile-border-radius:2.5em;
       box-shadow:1em 0 yellow, 2em 0 green;
     }
   }
-  img {
+  img, video {
     display:block;
     width:100%;
   }

@@ -3440,9 +3440,6 @@ section.page-section .note {
     width: 27rem;
   }
 }
-.browser-windows-stacked .browser-window img {
-  width: 100%;
-}
 
 .browser-window {
   border-radius: 0.5em;
@@ -3470,7 +3467,7 @@ section.page-section .note {
   background: indianred;
   box-shadow: 1em 0 yellow, 2em 0 green;
 }
-.browser-window img {
+.browser-window img, .browser-window video {
   display: block;
   width: 100%;
 }
