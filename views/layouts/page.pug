@@ -33,7 +33,7 @@ block content
         - var isFullWidth = section.fields.classes && section.fields.classes.indexOf('full-width') !== -1 ? true : false
         if type == 'nextProjectSection'
           section.next-project(class=section.fields.backgroundColor)
-            a(href=section.fields.url data-direction="forward" data-color=section.fields.backgroundColor)
+            a.next-project-link(href=section.fields.url data-direction="forward" data-color=section.fields.backgroundColor)
               .next-project-text= section.fields.firstProject ? 'First Project' : 'Next Project'
               .title= section.fields.name
         else

@@ -3716,7 +3716,7 @@ section.page-section .note {
     background-color: #05a081;
   }
 }
-.next-project a {
+.next-project a.next-project-link {
   display: block;
   padding: 4rem 1rem;
   text-decoration: none;
