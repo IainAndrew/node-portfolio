@@ -36,6 +36,11 @@
     }
   }
   @include breakpoint(medium up) {
+    @each $name, $value in $background-colors {
+      &.#{$name} {
+        background-color:rgba($value, 0.3);
+      }
+    }
     &:hover {
       @each $name, $value in $background-colors {
         &.#{$name} {

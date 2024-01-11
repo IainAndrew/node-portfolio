@@ -3742,6 +3742,27 @@ section.page-section .note {
   }
 }
 @media print, screen and (min-width: 40em) {
+  .next-project.blue {
+    background-color: rgba(5, 213, 255, 0.3);
+  }
+  .next-project.purple {
+    background-color: rgba(85, 51, 255, 0.3);
+  }
+  .next-project.turquoise {
+    background-color: rgba(103, 199, 201, 0.3);
+  }
+  .next-project.red {
+    background-color: rgba(196, 92, 96, 0.3);
+  }
+  .next-project.yellow {
+    background-color: rgba(236, 190, 70, 0.3);
+  }
+  .next-project.grey {
+    background-color: rgba(38, 50, 56, 0.3);
+  }
+  .next-project.green {
+    background-color: rgba(5, 160, 129, 0.3);
+  }
   .next-project:hover.blue {
     background-color: #05d5ff;
   }
